@@ -1,0 +1,39 @@
+sudo apt install protobuf-compiler
+
+Protobuf is the most commonly used IDL (Interface Definition Language) for gRPC.
+ It's where you basically store your data and function contracts in the form of a proto file.
+
+ ---------------
+ JSON vs Binary Encodings:
+ -----
+ json:
+ ----
+ it s text based encoding, hence size s large
+ doesnt impose any validation on schema level
+pros:
+ json - will be readable
+ widely supported by JS
+ simplicity in storing
+
+ Cons:
+ each data is defined by type, hence it defautly allots lot of memory and json can keep growing
+ takes lot of space,and lags in processing speed incase of lot of data,1 tb
+
+ Binary Encodings:
+ -------------
+ better compression
+ faster processing - When using Protocol Buffers for sending messages over the network,
+  the payloads are serialized in binary. So they are much smaller when compared to XML or JSON
+  hence much used in microservices a lot
+  
+  Schema and Validation
+  
+  Backward Compatability: By using the unique field number, 
+  Protocol Buffer offers excellent backward compatibility. 
+  Users can easily add or delete a field on the sender/recipient side without worrying about compatibility issues.
+
+ when new fields are added, there shud be
+ a.forward compatibility - old code can handle new data
+ b. backward compatibility - new code shud handle old data
+
+

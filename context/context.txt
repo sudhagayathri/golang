@@ -1,0 +1,12 @@
+context is used for working with slow processes, apis, if u want to stop any goroutine
+
+if u wantd to run one goroutine before other
+
+
+A task should be executed within a time limit, say 3 seconds. Otherwise, it should gently stop or return.
+
+to share value btn multiple fns:
+-------------
+Golang Context is a standard package in Golang that is used to access or share data, 
+for example when we have multiple functions and we want to share data between them, we can use context.
+ We can do so by using context.WithValue
